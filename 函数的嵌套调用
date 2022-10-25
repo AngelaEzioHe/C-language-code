@@ -1,0 +1,31 @@
+#include<stdio.h>
+void CEO();
+void Manager();
+void AssistantManager();
+void Clerk();
+
+int main()
+
+{
+	CEO();
+	return 0;
+}
+void CEO()
+{
+	printf("CEO把任务分配给经理\n");
+	Manager(); 
+}
+void Manager()
+{
+	printf("经理把任务分配给副经理\n");
+	AssistantManager();
+}
+void AssistantManager()
+{
+	printf("副经理把任务分配给职员\n");
+	Clerk();
+}
+void Clerk()
+{
+	printf("职员完成工作");
+}
