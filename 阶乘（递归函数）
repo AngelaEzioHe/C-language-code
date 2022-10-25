@@ -1,0 +1,20 @@
+#include<stdio.h>
+long factorial(int n);
+int main()
+{
+	int n;
+	long result;
+	scanf("%d",&n);
+	result=factorial(n);
+	printf("%ld",result);
+	return 0;
+}
+long factorial(int n)
+{
+	long result;
+	if(n == 0)
+	result = 1;
+	else
+	result = n * factorial(n-1);
+	return result;
+}
