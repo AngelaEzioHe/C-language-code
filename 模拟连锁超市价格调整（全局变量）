@@ -1,0 +1,36 @@
+#include<stdio.h>
+int GlobalPrice=100;
+void Price1();
+void Price2();
+void Price3();
+void ChangePrice();
+int main()
+{
+	printf("原价格：%d\n",GlobalPrice);
+	Price1();
+	Price2();
+	Price3();
+	ChangePrice();
+	printf("修改后的价格：%d\n",GlobalPrice);
+	Price1();
+	Price2();
+	Price3();
+	return 0;
+}
+void Price1()
+{
+	printf("1号店价格为：%d\n",GlobalPrice);
+}
+void Price2()
+{
+	printf("2号店价格为：%d\n",GlobalPrice);
+}
+void Price3()
+{
+	printf("3号店价格为：%d\n",GlobalPrice);
+} 
+void ChangePrice()
+{
+	printf("请修改价格：\n");
+	scanf("%d",&GlobalPrice);
+}
