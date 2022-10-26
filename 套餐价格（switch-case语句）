@@ -1,0 +1,14 @@
+#include<stdio.h>
+int main()
+{
+	int number;
+	printf("1.考神套餐 2.单身套餐 3.情侣套餐\n");
+	scanf("%d",&number);
+	switch(number)
+	{
+		case 1:printf("13元");break;
+		case 2:printf("9.9元");break;
+		case 3:printf("20元");break;
+	}
+	return 0;
+}
