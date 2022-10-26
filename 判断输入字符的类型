@@ -1,0 +1,46 @@
+#include<stdio.h>
+#include<ctype.h>
+
+void Judge(char c);
+
+int main()
+{
+	char cCharPut;
+	char CharTemp;
+	
+	printf("请第一次输入一个字符:");
+	scanf("%c",&cCharPut);
+	Judge(cCharPut);
+	CharTemp=getchar();
+	
+	printf("请第二次输入一个字符:");
+	scanf("%c",&cCharPut);
+	Judge(cCharPut);
+	CharTemp=getchar();
+	
+	printf("请第三次输入一个字符:");
+	scanf("%c",&cCharPut);
+	Judge(cCharPut);
+	
+	return 0;
+}
+
+void Judge(char cChar)
+{
+	if(isalpha(cChar))
+	{
+		printf("你输入的是字母%c\n",cChar);
+	}
+	if(isdigit(cChar))
+	{
+		printf("你输入的是数字%c\n",cChar);
+	}
+	if(isalnum(cChar))
+	{
+		printf("你输入的是字母或者数字%c\n",cChar); 
+	}
+	else
+	{
+		printf("你输入的既不是数字也不是字母:%c\n",cChar);
+	}
+}
