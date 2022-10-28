@@ -1,0 +1,64 @@
+//小熊去到商店，选择了一种它非常喜欢的糖果，其单价为k元，假定商店里有无穷多的这种糖果。
+//它的父亲允许它花费任意多的10元硬币和一个r元硬币去购买，但不能找零，请帮助小熊确定它能购买的最少数量的糖果是多少?
+//输入为一行两个整数k和r(1≤k≤1000，1≤r≤9),分别表示糖果的价格以及小熊手里的单独硬币的币值。
+//输出为一个数,表示小熊在不找零的情况下所能购买糖果的最小数量。
+#include<stdio.h>
+int candy(int k, int r);
+int main() {
+	int k, i, r; //k为糖果单价，i为10元硬币数量，r为单独硬币面额
+	int num;//num为买糖果的最少数量
+	scanf("%d %d", &k, &r);
+	num = candy(k, r);
+	printf("%d", num);
+	return 0;
+}
+int candy(int k, int r) {
+	int result, i;
+	if (k < 10 && r % k == 0)
+		result = r / k;
+	else if(k % 10 == 0)
+		result = 1;
+	else {
+		for (i = 1; ; i++) {
+			if ((i * 10 + r) % k == 0)
+				break;
+		}
+		result = (i * 10 + r) / k;
+	}
+	return result;
+}
+
+
+
+
+//#include  <iostream>
+//using  namespace  std;
+//int  getCandy(int, int);
+//int  main()
+//{
+//    int  k, r;
+//    cin >> k >> r;
+//    int result = getCandy(k, r);
+//    cout << result << endl;
+//    return  0;
+//}
+//int  getCandy(int k, int r)
+//{
+//    int i = k % 10;//求出糖果的个位数字
+//    int ret = 10;
+//    if (k<10&&r%k==0)//当糖果价格少于10时并且用零钱整买
+//            ret = r / k;
+//    else
+//    {
+//        for (int j = 1; j < 10; j++)//从一到九循环
+//        {
+//            int s = i * j % 10;//得到第j个糖果的个位
+//            if (s == r || s == 0)//如果个位为0或者为r时,此时即为买的个数
+//            {
+//                ret = j;
+//                break;
+//            }
+//        }
+//    }
+//    return ret;
+//} 
