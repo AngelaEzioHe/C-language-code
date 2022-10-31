@@ -1,0 +1,25 @@
+#include<stdio.h>
+void year(int a,int b);
+int main()
+{
+	int x,y;
+	scanf("%d%d",&x,&y);
+	year(x,y);
+	return 0;
+}
+void year(int a,int b)
+{
+	int A[b-a+10];
+	int num=0;
+	for(int i=a;i<=b;i++)
+	{
+		if(((i % 4 == 0) && (i % 100 != 0)) || (i % 400 == 0))
+		{
+			num++;
+			A[num]=i;		
+		}
+	}
+	printf("%d\n",num);
+	for(int i=1;i<=num;i++)
+	printf("%d ",A[i]);
+}
